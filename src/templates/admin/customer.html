@@ -1,0 +1,36 @@
+{% extends '_base.html' %}
+
+{% block content %}
+                    <div class="col-lg-7 col-xl-8">
+                        <div class="card shadow mb-4">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h6 class="text-primary font-weight-bold m-0">Orders</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Product</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for order in orders %}
+                                            <tr>
+                                                <td>{{order.customer}}</td>
+                                                <td>{{order.product}}</td>
+                                                <td>{{order.status}}</td>
+                                                <td><a href="" class="btn btn-outline-success">Update</a></td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endblock content %}
+
